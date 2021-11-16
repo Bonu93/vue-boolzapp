@@ -58,12 +58,8 @@ body {
     border-radius: 50%;
 }
 
-.user-detail {
+.user-detail, .notifications {
     font-size: 14px;
-}
-
-.username {
-    font-weight: 700;
 }
 
 .cta a {
@@ -75,6 +71,26 @@ body {
 .last-view {
     font-size: 11px;
     color: grey;
+}
+
+/* NOTIFICATIONS ALERT */
+
+.notifications {
+    background-color: #a2dffe;
+}
+
+.notifications .notification-detail a {
+    color: grey;
+    font-size: 11px;
+}
+
+.bell {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #a2dffe;
+    font-size: 1.5rem;
 }
 
 
