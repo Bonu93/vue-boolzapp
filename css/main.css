@@ -21,13 +21,60 @@ body {
     );
 }
 
-#app {
-    width: 80%;
-    height: 95%;
+/* UTILITIES */
+
+.w-30 {
+    width: 30%;
 }
+
+.w-70 {
+    width: 70%;
+}
+
+/* DEBUG */
 
 .box {
     background-color: rgba(0, 0, 0, .3);
     border: 1px solid black;
     height: 100px;
 }
+
+/* APP */
+
+#app {
+    width: 80%;
+    height: 95%;
+}
+
+/* SECTION HEADER */
+
+.sec-header {
+    background-color: #ededed;
+
+}
+
+.user-image img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.user-detail {
+    font-size: 14px;
+}
+
+.username {
+    font-weight: 700;
+}
+
+.cta a {
+    text-decoration: none;
+    color: grey;
+    margin-right: .5rem;
+}
+
+.last-view {
+    font-size: 11px;
+    color: grey;
+}
+
+
