@@ -6,3 +6,29 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        to bottom, 
+        #32a093 0%, 
+        #32a093 15%,  
+        #dfe0d9 15%,
+        #dfe0d9 100%
+    );
+}
+
+#app {
+    width: 80%;
+    height: 95%;
+    overflow: auto;
+}
+
+.box {
+    background-color: rgba(0, 0, 0, .3);
+    border: 1px solid black;
+    height: 100px;
+}
