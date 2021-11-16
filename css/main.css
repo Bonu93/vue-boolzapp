@@ -123,11 +123,16 @@ body {
 
 .contact {
     cursor: pointer;
+    transition: background-color .5s ;
 }
 
 .contact-image img {
     width: 45px;
     border-radius: 50%;
+}
+
+.contact:hover {
+    background-color: lightgrey;
 }
 
 /* CHAT SECTION */
