@@ -159,6 +159,10 @@ body {
     background-color: #ededed;
 }
 
+.write-message {
+    border: 1px solid lightgrey;
+}
+
 .message-input i {
     font-size: 1.5rem;
 }
