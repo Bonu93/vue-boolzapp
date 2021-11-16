@@ -62,7 +62,7 @@
             <div class="chats flex-grow-1 bg-light">
                 <div v-for="contact in contacts" class="contact d-flex align-items-center p-2 border-top">
                     <div class="user-image">
-                        <img :src="`./img/avatar${contact.avatar}.jpg`" alt="Io">
+                        <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="`${contact.name}`">
                     </div>
                     <div class="contact-detail mx-2">
                         <div class="username fw-bold">{{ contact.name }}</div>
