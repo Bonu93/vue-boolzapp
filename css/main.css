@@ -58,7 +58,7 @@ body {
     border-radius: 50%;
 }
 
-.user-detail, .notifications {
+.sec-header .user-detail, .notifications {
     font-size: 14px;
 }
 
@@ -93,4 +93,21 @@ body {
     font-size: 1.5rem;
 }
 
+/* SEARCH BAR */
+
+.search-bar {
+    background-color: #fbfbfb;
+}
+.search {
+    padding: 2px 20px;
+    cursor: pointer;
+    border: .5px solid grey;
+    border-radius: 2px;
+    color: grey;
+}
+
+.search-input::placeholder {
+    font-size: 10px;
+    margin-left: 10px;
+}
 
