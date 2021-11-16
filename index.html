@@ -18,7 +18,7 @@
     <div id="app" class="d-flex">
 
         <!-- left sidebar -->
-        <aside class="w-30 h-100 d-flex flex-column border-end border-secondary">
+        <aside class="w-30 h-100 d-flex flex-column border-end">
             <!-- section header -->
             <header class="sec-header p-2 d-flex justify-content-between align-items-center">
                 <!-- user details and image -->
@@ -59,9 +59,9 @@
             </div>
 
             <!-- chats section -->
-            <div class="chats flex-grow-1 bg-light">
+            <div class="chats flex-grow-1 bg-light overflow-auto">
                 <div v-for="contact in contacts" class="contact d-flex align-items-center p-2 border-top">
-                    <div class="user-image">
+                    <div class="contact-image">
                         <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="`${contact.name}`">
                     </div>
                     <div class="contact-detail mx-2">
@@ -95,7 +95,38 @@
                 </div>
 
             </header>
+
+            <div class="chat flex-grow-1 p-5 overflow-auto d-flex flex-column">
+                <div class="message mb-2 p-1 w-40 sent align-self-end d-flex flex-column">
+                    <div class="message-text p-2">
+                        Messaggio inviato
+                    </div>
+                    <div class="message-date text-end">
+                        10/01/2021 15:50:00
+                    </div>
+                </div>
+                <div class="message mb-2 p-1 w-40 received d-flex flex-column">
+                    <div class="message-text p-2">
+                        Messaggio ricevuto
+                    </div>
+                    <div class="message-date text-end">
+                        10/01/2021 15:50:00
+                    </div>
+                </div>
+            </div>
+            <!-- message input -->
+            <div class="message-input d-flex p-2">
+                <div class="emoji px-4 py-2 d-flex justify-content-center align-items-center">
+                    <i class="far fa-smile"></i>
+                </div>
+                <input type="text" placeholder="Scrivi un messaggio" class="write-message flex-grow-1">
+                <div class="mic px-4 py-2 d-flex justify-content-center align-items-center">
+                    <i class="fas fa-microphone"></i>
+                </div>
+            </div>
+
         </main>
+
     </div>
 
 
