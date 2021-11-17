@@ -4,7 +4,7 @@ const app = new Vue({
     el: '#app',
 
     data: {
-
+        
         activeContact: 0,
 
         userMessage: '',
@@ -101,6 +101,7 @@ const app = new Vue({
 
     methods: {
 
+        //switch active contact
         setActiveContact(index) {
             this.activeContact = index;
 
@@ -109,19 +110,21 @@ const app = new Vue({
 
         newMessage() {
             
-
+            // pick date 
             this.getDate();
 
+            // generate new message obj 
             this.contacts[this.activeContact].messages.push({
                 date: this.dateNow,
                 text: this.userMessage,
                 status: 'sent'
             });
-
+            
+            // clear input 
             this.userMessage = '';
 
 
-
+            // after 1 sec generates bot message 
             setTimeout( () => {
 
                 this.getDate();
