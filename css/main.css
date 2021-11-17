@@ -54,7 +54,6 @@ body {
 
 .sec-header {
     background-color: #ededed;
-
 }
 
 .user-image img {
@@ -136,6 +135,10 @@ body {
     background-color: lightgrey;
 }
 
+.contact.active {
+    background-color: lightgrey;
+}
+
 /* CHAT SECTION */
 
 .chat {
@@ -148,6 +151,7 @@ body {
 
 .message.sent {
     background-color: #ddfabf;
+    align-self: flex-end;
 }
 
 .message.received {

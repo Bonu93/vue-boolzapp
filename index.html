@@ -60,7 +60,12 @@
 
             <!-- chats section -->
             <div class="chats flex-grow-1 bg-light overflow-auto">
-                <div v-for="contact in contacts" class="contact d-flex align-items-center p-2 border-top">
+                <div 
+                v-for="(contact, i) in contacts" 
+                class="contact d-flex align-items-center p-2 border-top" 
+                :class="{active: activeContact === i}"
+                @click="setActiveContact(i)"
+                >
                     <div class="contact-image">
                         <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="`${contact.name}`">
                     </div>
@@ -78,10 +83,12 @@
                  <!-- user details and image -->
                 <div class="user d-flex align-items-center">
                     <div class="user-image">
-                        <img src="./img/avatar_1.jpg" alt="Michele">
+                        <img :src="`./img/avatar${contacts[activeContact].avatar}.jpg`" alt="contacts[activeContact].name">
                     </div>
                     <div class="user-detail mx-2 d-flex flex-column">
-                        <div class="username fw-bold">Michele</div>
+                        <div class="username fw-bold">
+                            {{ contacts[activeContact].name }}
+                        </div>
                         <div class="last-view">
                             Ultimo accesso oggi alle 10:35
                         </div>
@@ -97,22 +104,20 @@
             </header>
             <!-- message section  -->
             <div class="chat flex-grow-1 p-5 overflow-auto d-flex flex-column">
-                <div class="message mb-2 p-1 w-40 sent align-self-end d-flex flex-column">
+                <div 
+                v-for="(message, i) in contacts[activeContact].messages"
+                class="message mb-2 p-1 w-40 d-flex flex-column"
+                :class="{sent: message.status === 'sent',
+                        received: message.status === 'received'}"
+                >
                     <div class="message-text p-2">
-                        Messaggio inviato
+                        {{ message.text }}
                     </div>
                     <div class="message-date text-end">
                         10/01/2021 15:50:00
                     </div>
                 </div>
-                <div class="message mb-2 p-1 w-40 received d-flex flex-column">
-                    <div class="message-text p-2">
-                        Messaggio ricevuto
-                    </div>
-                    <div class="message-date text-end">
-                        10/01/2021 15:50:00
-                    </div>
-                </div>
+                
             </div>
             <!-- message input -->
             <div class="message-input d-flex p-2">

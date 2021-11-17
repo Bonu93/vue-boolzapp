@@ -5,6 +5,8 @@ const app = new Vue({
 
     data: {
 
+        activeContact: 0,
+
         contacts: [
             {
                 name: 'Michele',
@@ -93,6 +95,8 @@ const app = new Vue({
     },
 
     methods: {
-
+        setActiveContact(index) {
+            this.activeContact = index;
+        }
     },
 })
