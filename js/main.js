@@ -4,7 +4,7 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        
+
         activeContact: 0,
 
         userMessage: '',
@@ -114,28 +114,28 @@ const app = new Vue({
             this.getDate();
 
             // generate new message obj 
-            this.contacts[this.activeContact].messages.push({
-                date: this.dateNow,
-                text: this.userMessage,
-                status: 'sent'
-            });
-            
-            // clear input 
-            this.userMessage = '';
-
-
-            // after 1 sec generates bot message 
-            setTimeout( () => {
-
-                this.getDate();
-
+            if (this.userMessage.length !== 0) {
                 this.contacts[this.activeContact].messages.push({
                     date: this.dateNow,
-                    text: 'Ok',
-                    status: 'received'
+                    text: this.userMessage,
+                    status: 'sent'
                 });
-            }, 1000);
-
+                // clear input 
+                this.userMessage = '';
+    
+    
+                // after 1 sec generates bot message 
+                setTimeout( () => {
+    
+                    this.getDate();
+    
+                    this.contacts[this.activeContact].messages.push({
+                        date: this.dateNow,
+                        text: 'Ok',
+                        status: 'received'
+                    });
+                }, 1000);
+            }
 
         },
 
