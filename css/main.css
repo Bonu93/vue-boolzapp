@@ -23,7 +23,7 @@ body {
 
 input:focus {
     outline: 0;
-    border: 1px solid black;
+    border: 1px solid grey;
 }
 
 /* UTILITIES */
