@@ -132,7 +132,7 @@ const app = new Vue({
         },
 
         newMessage() {
-            
+
             // pick date 
             this.getDate();
 
