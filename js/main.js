@@ -113,7 +113,7 @@ const app = new Vue({
 
             this.userMessage = '';
 
-            setTimeout(() => {
+            setTimeout( () => {
                 this.contacts[this.activeContact].messages.push({
                     date: '10/01/2020 15:50:00',
                     text: 'Ok',
