@@ -7,6 +7,8 @@ const app = new Vue({
 
         activeContact: 0,
 
+        userMessage: '',
+
         contacts: [
             {
                 name: 'Michele',
@@ -51,7 +53,8 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
-            },    {
+            },    
+            {
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
@@ -95,8 +98,28 @@ const app = new Vue({
     },
 
     methods: {
+
         setActiveContact(index) {
             this.activeContact = index;
-        }
+        },
+
+        newMessage() {
+
+            this.contacts[this.activeContact].messages.push({
+                date: '10/01/2020 15:50:00',
+                text: this.userMessage,
+                status: 'sent'
+            });
+
+            this.userMessage = '';
+
+            setTimeout(() => {
+                this.contacts[this.activeContact].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    text: 'Ok',
+                    status: 'received'
+                });
+            }, 1000);
+        },
     },
 })

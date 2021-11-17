@@ -124,7 +124,12 @@
                 <div class="emoji px-4 py-2 d-flex justify-content-center align-items-center">
                     <i class="far fa-smile"></i>
                 </div>
-                <input type="text" placeholder="Scrivi un messaggio" class="write-message flex-grow-1 ps-2">
+                <input
+                 v-model="userMessage" 
+                type="text" 
+                placeholder="Scrivi un messaggio" 
+                class="write-message flex-grow-1 ps-2"
+                @keyup.enter="newMessage">
                 <div class="mic px-4 py-2 d-flex justify-content-center align-items-center">
                     <i class="fas fa-microphone"></i>
                 </div>
