@@ -9,6 +9,8 @@ const app = new Vue({
 
         userMessage: '',
 
+        dateNow: 'get date',
+
         contacts: [
             {
                 name: 'Michele',
@@ -104,22 +106,37 @@ const app = new Vue({
         },
 
         newMessage() {
+            
+
+            this.getDate();
 
             this.contacts[this.activeContact].messages.push({
-                date: '10/01/2020 15:50:00',
+                date: this.dateNow,
                 text: this.userMessage,
                 status: 'sent'
             });
 
             this.userMessage = '';
 
+
+
             setTimeout( () => {
+
+                this.getDate();
+
                 this.contacts[this.activeContact].messages.push({
-                    date: '10/01/2020 15:50:00',
+                    date: this.dateNow,
                     text: 'Ok',
                     status: 'received'
                 });
             }, 1000);
+
+
+        },
+
+        getDate() {
+            const now = dayjs();
+            this.dateNow = now.format('DD/MM/YYYY HH:mm:ss');
         },
     },
 })
