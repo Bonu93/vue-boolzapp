@@ -129,7 +129,8 @@
                 type="text" 
                 placeholder="Scrivi un messaggio" 
                 class="write-message flex-grow-1 ps-2"
-                @keyup.enter="newMessage">
+                @keyup.enter="newMessage"
+                ref="messageInput">
                 <div class="mic px-4 py-2 d-flex justify-content-center align-items-center">
                     <i class="fas fa-microphone"></i>
                 </div>

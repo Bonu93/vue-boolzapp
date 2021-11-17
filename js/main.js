@@ -103,6 +103,8 @@ const app = new Vue({
 
         setActiveContact(index) {
             this.activeContact = index;
+
+            this.$refs.messageInput.focus();
         },
 
         newMessage() {
