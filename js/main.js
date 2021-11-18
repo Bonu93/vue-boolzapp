@@ -181,7 +181,6 @@ const app = new Vue({
                 contact.visible = true : contact.visible = false;
                 
             })
-
         },
     },
 })

@@ -59,7 +59,8 @@
                 type="text" 
                 placeholder="Cerca o inizia una nuova conversazione" class="flex-grow-1 ps-2 search-input"
                 v-model.trim="searchQuery"
-                @keyup="searchContact">
+                @keyup="searchContact"
+                >
             </div>
 
             <!-- contacts section -->
@@ -89,7 +90,9 @@
                  <!-- user details and image -->
                 <div class="user d-flex align-items-center">
                     <div class="user-image">
-                        <img :src="`./img/avatar${contacts[activeContact].avatar}.jpg`" alt="contacts[activeContact].name">
+                        <img :src="`./img/avatar${contacts[activeContact].avatar}.jpg`" 
+                        alt="contacts[activeContact].name"
+                        >
                     </div>
                     <div class="user-detail mx-2 d-flex flex-column">
                         <div class="username fw-bold">
@@ -136,7 +139,8 @@
                 class="write-message flex-grow-1 ps-2"
                 @keyup.enter="newMessage"
                 ref="messageInput">
-                <div class="mic px-4 py-2 d-flex justify-content-center align-items-center">
+                <div class="mic px-4 py-2 d-flex justify-content-center align-items-center"
+                >
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
