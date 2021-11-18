@@ -55,13 +55,18 @@
             <!-- search bar -->
             <div class="search-bar d-flex p-1">
                 <div class="search"><i class="fas fa-search"></i></div>
-                <input type="text" placeholder="Cerca o inizia una nuova conversazione" class="flex-grow-1 ps-2 search-input">
+                <input 
+                type="text" 
+                placeholder="Cerca o inizia una nuova conversazione" class="flex-grow-1 ps-2 search-input"
+                v-model="searchQuery"
+                @keyup="searchContact">
             </div>
 
-            <!-- chats section -->
+            <!-- contacts section -->
             <div class="chats flex-grow-1 bg-light overflow-auto">
                 <div 
-                v-for="(contact, i) in contacts" 
+                v-for="(contact, i) in contacts"
+                v-if="contact.visible === true"
                 class="contact d-flex align-items-center p-2 border-top" 
                 :class="{active: activeContact === i}"
                 @click="setActiveContact(i)"
