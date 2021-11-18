@@ -182,9 +182,8 @@ const app = new Vue({
                 } else {
                     contact.visible = false;
                 }
-                console.log(contact.visible);
             })
-            
+
         },
     },
 })

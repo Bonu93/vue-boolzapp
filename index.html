@@ -58,7 +58,7 @@
                 <input 
                 type="text" 
                 placeholder="Cerca o inizia una nuova conversazione" class="flex-grow-1 ps-2 search-input"
-                v-model="searchQuery"
+                v-model.trim="searchQuery"
                 @keyup="searchContact">
             </div>
 
@@ -66,8 +66,8 @@
             <div class="chats flex-grow-1 bg-light overflow-auto">
                 <div 
                 v-for="(contact, i) in contacts"
-                v-if="contact.visible === true"
-                class="contact d-flex align-items-center p-2 border-top" 
+                v-show="contact.visible === true"
+                class="contact align-items-center p-2 border-top" 
                 :class="{active: activeContact === i}"
                 @click="setActiveContact(i)"
                 >
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </aside>
 
         <!-- main section -->
@@ -113,8 +113,7 @@
                 <div 
                 v-for="(message, i) in contacts[activeContact].messages"
                 class="message mb-2 p-1 w-40 d-flex flex-column"
-                :class="{sent: message.status === 'sent',
-                        received: message.status === 'received'}"
+                :class="message.status"
                 >
                     <div class="message-text p-2">
                         {{ message.text }}
